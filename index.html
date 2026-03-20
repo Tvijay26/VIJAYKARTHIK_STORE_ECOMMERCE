@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Karthik | Ultimate Luxury Store</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Advanced Color Palette - 60/30/10 with gradients */
+            --primary-50: #f5f0ff;
+            --primary-100: #ede5ff;
+            --primary-200: #d9ccff;
+            --primary-300: #b8a6ff;
+            --primary-400: #9373ff;
+            --primary-500: #6b3eff;
+            --primary-600: #5520e6;
+            --primary-700: #3f0ab3;
+            --primary-800: #2e0780;
+            --primary-900: #1c054d;
+            --primary-main: #6b3eff;
+            --primary-gradient: linear-gradient(135deg, #6b3eff, #9373ff);
+            --primary-glow: 0 0 20px rgba(107, 62, 255, 0.3);
+            
+            /* Secondary - Royal Blue & Teal */
+            --secondary-50: #e0f2fe;
+            --secondary-100: #bae6fd;
+            --secondary-200: #7dd3fc;
+            --secondary-300: #38bdf8;
+            --secondary-400: #0ea5e9;
+            --secondary-500: #0284c7;
+            --secondary-600: #0369a1;
+            --secondary-700: #075985;
+            --secondary-800: #0c4a6e;
+            --secondary-900: #0f3b5a;
+            --secondary-main: #0284c7;
+            --secondary-gradient: linear-gradient(135deg, #0284c7, #38bdf8);
+            
+            /* Accent - Gold & Rose Gold */
+            --accent-50: #fff9e6;
+            --accent-100: #ffefc2;
+            --accent-200: #ffe49e;
+            --accent-300: #ffd97a;
+            --accent-400: #ffce56;
+            --accent-500: #ffc132;
+            --accent-600: #e6a91f;
+            --accent-700: #b3800c;
+            --accent-800: #805a00;
+            --accent-900: #4d3600;
+            --accent-main: #ffc132;
+            --accent-gradient: linear-gradient(135deg, #ffc132, #ffd97a);
+            --accent-glow: 0 0 20px rgba(255, 193, 50, 0.3);
+            
+            /* Status Colors */
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            
+            /* Neutrals */
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #64748b;
+            --border-light: #e2e8f0;
+            --card-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);
+            --hover-shadow: 0 30px 50px -20px rgba(107,62,255,0.3);
+            
+            /* Fonts */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== QUOTATION STYLES ===== */
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary-900), var(--secondary-900));
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -100px;
+            left: -50px;
+            font-size: 500px;
+            color: rgba(255,255,255,0.05);
+            font-family: serif;
+        }
+
+        .quote-section::after {
+            content: '"';
+            position: absolute;
+            bottom: -200px;
+            right: -50px;
+            font-size: 500px;
+            color: rgba(255,255,255,0.05);
+            font-family: serif;
+            transform: rotate(180deg);
+        }
+
+        .quote-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 40px;
+        }
+
+        .quote-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .quote-card {
+            min-width: 100%;
+            padding: 3rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            border: 2px solid var(--accent-500);
+            box-shadow: var(--accent-glow);
+            text-align: center;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--accent-500);
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .quote-text {
+            font-size: 2rem;
+            font-family: var(--font-heading);
+            color: white;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+        }
+
+        .quote-author {
+            font-size: 1.3rem;
+            color: var(--accent-500);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-title {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+        }
+
+        .quote-dots {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quote-dot.active {
+            background: var(--accent-500);
+            transform: scale(1.3);
+            box-shadow: var(--accent-glow);
+        }
+
+        /* ===== LOGIN PAGE STYLES ===== */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-900), var(--secondary-900));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-500) 0%, transparent 50%);
+            opacity: 0.1;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 3.5rem;
+            border-radius: 50px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+            border: 3px solid var(--accent-500);
+            animation: glowPulse 3s infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 30px 60px rgba(107,62,255,0.3); }
+            50% { box-shadow: 0 30px 80px rgba(255,193,50,0.5); }
+        }
+
+        .login-logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: var(--font-heading);
+        }
+
+        /* ===== MAIN STORE STYLES ===== */
+        .main-store {
+            display: none;
+        }
+
+        .main-store.active {
+            display: block;
+        }
+
+        /* Announcement Bar */
+        .announcement {
+            background: linear-gradient(135deg, var(--primary-800), var(--secondary-800));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+            border-bottom: 3px solid var(--accent-500);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement i {
+            color: var(--accent-500);
+            margin: 0 0.5rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--accent-500);
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-600), var(--accent-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: var(--font-heading);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .header-icons i {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .header-icons i:hover {
+            color: var(--accent-500);
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-gradient);
+            color: var(--text-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-badge {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--primary-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary-800), var(--secondary-800));
+            border-radius: 50px;
+            padding: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-500) 0%, transparent 70%);
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        .hero-banner h1 {
+            font-size: 4.5rem;
+            font-family: var(--font-heading);
+            line-height: 1.1;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            box-shadow: var(--card-shadow);
+            border: 2px solid var(--accent-500);
+        }
+
+        .user-profile {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--accent-gradient);
+            margin-bottom: 2rem;
+        }
+
+        .user-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            border: 4px solid var(--accent-500);
+            box-shadow: var(--accent-glow);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            padding: 1.2rem;
+            margin-bottom: 0.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .sidebar-menu li i {
+            width: 25px;
+            color: var(--accent-500);
+            font-size: 1.2rem;
+        }
+
+        .sidebar-menu li:hover {
+            background: var(--primary-50);
+            color: var(--primary-600);
+            transform: translateX(5px);
+        }
+
+        .sidebar-menu li.active {
+            background: var(--primary-gradient);
+            color: white;
+            font-weight: 600;
+            box-shadow: var(--primary-glow);
+        }
+
+        .sidebar-menu li.active i {
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            min-height: 600px;
+            border: 2px solid var(--accent-500);
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-gradient);
+        }
+
+        .content-header h2 {
+            font-size: 2rem;
+            font-family: var(--font-heading);
+            color: var(--primary-700);
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            padding: 1.5rem;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-gradient);
+            transform: translateX(-100%);
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-500);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .product-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-gradient);
+            color: var(--text-dark);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            z-index: 2;
+            box-shadow: var(--accent-glow);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-category {
+            color: var(--accent-600);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            color: var(--primary-700);
+            font-family: var(--font-heading);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-600);
+            margin: 0.5rem 0;
+        }
+
+        .product-rating {
+            color: var(--accent-500);
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .product-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .buy-btn {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: var(--primary-glow);
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary-500);
+        }
+
+        .cart-btn {
+            background: var(--secondary-gradient);
+            color: white;
+        }
+
+        .wishlist-btn {
+            background: var(--accent-gradient);
+            color: var(--text-dark);
+            width: 45px;
+            flex: 0 0 45px;
+            border-radius: 50%;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
+            padding: 2rem;
+            border-radius: 25px;
+            text-align: center;
+            border: 2px solid var(--accent-500);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--accent-600);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-700);
+            font-family: var(--font-heading);
+        }
+
+        /* Orders Table */
+        .orders-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 1rem;
+        }
+
+        .orders-table th {
+            background: var(--primary-50);
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-700);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .orders-table td {
+            padding: 1.2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .order-status {
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .status-delivered {
+            background: #d1fae5;
+            color: var(--success);
+        }
+
+        .status-processing {
+            background: #fed7aa;
+            color: var(--warning);
+        }
+
+        .status-cancelled {
+            background: #fee2e2;
+            color: var(--danger);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 40px;
+            z-index: 1001;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            border: 3px solid var(--accent-500);
+        }
+
+        .modal.show {
+            display: block;
+            animation: modalPop 0.4s;
+        }
+
+        @keyframes modalPop {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            color: white;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-left: 6px solid var(--accent-500);
+            z-index: 1000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s;
+            font-weight: 500;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOGIN PAGE -->
+    <div class="login-container" id="login-page">
+        <div class="login-card">
+            <div class="login-logo">VIJAY KARTHIK</div>
+            <div class="login-subtitle" style="text-align: center; color: var(--text-gray); margin-bottom: 2rem;">Ultimate Luxury Experience</div>
+            
+            <div class="input-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-700);">
+                    <i class="fas fa-user" style="color: var(--accent-500);"></i> Username
+                </label>
+                <input type="text" id="username" value="vijaykarthik" placeholder="Enter username" 
+                    style="width: 100%; padding: 1rem 1.5rem; border: 2px solid var(--border-light); border-radius: 30px; font-size: 1rem;">
+            </div>
+            
+            <div class="input-group" style="margin-bottom: 2rem;">
+                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-700);">
+                    <i class="fas fa-lock" style="color: var(--accent-500);"></i> Password
+                </label>
+                <input type="password" id="password" value="Test@123" placeholder="Enter password"
+                    style="width: 100%; padding: 1rem 1.5rem; border: 2px solid var(--border-light); border-radius: 30px; font-size: 1rem;">
+            </div>
+            
+            <button class="login-btn" onclick="login()" 
+                style="width: 100%; padding: 1.2rem; background: var(--primary-gradient); border: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; color: white; cursor: pointer; box-shadow: var(--primary-glow);">
+                <i class="fas fa-sign-in-alt"></i> Enter Vijay Karthik Store
+            </button>
+            
+            <div class="login-info" style="margin-top: 2rem; padding: 1.5rem; background: var(--primary-50); border-radius: 20px; text-align: center;">
+                <p><i class="fas fa-crown" style="color: var(--accent-500);"></i> <strong>VIP Access Credentials:</strong></p>
+                <p style="font-size: 1.2rem; color: var(--primary-700);">Username: <strong style="color: var(--accent-600);">vijaykarthik</strong> | Password: <strong style="color: var(--accent-600);">Test@123</strong></p>
+                <p style="margin-top: 0.5rem; color: var(--primary-600);"><i class="fas fa-arrow-down"></i> Click to enter ultimate store <i class="fas fa-arrow-down"></i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN STORE -->
+    <div class="main-store" id="main-store">
+        <!-- Quote Section - Inspirational Quotes -->
+        <section class="quote-section">
+            <div class="quote-container">
+                <div class="quote-slider" id="quoteSlider">
+                    <div class="quote-track" id="quoteTrack">
+                        <!-- Quotes will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="quote-dots" id="quoteDots"></div>
+            </div>
+        </section>
+
+        <!-- Announcement -->
+        <div class="announcement">
+            <i class="fas fa-crown"></i> Welcome, <span id="welcome-user">Vijay Karthik</span>! <i class="fas fa-gem"></i> Platinum Member Benefits Active <i class="fas fa-gift"></i> Extra 20% OFF with code: VIJAYVIP
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="container header-inner">
+                <div class="logo">VIJAY KARTHIK</div>
+                <nav class="nav-menu">
+                    <a onclick="showSection('home')">Home</a>
+                    <a onclick="showSection('products')">Luxury Collection</a>
+                    <a onclick="showSection('orders')">My Orders</a>
+                    <a onclick="showSection('cart')">Cart</a>
+                    <a onclick="showSection('account')">VIP Account</a>
+                    <a onclick="showSection('quotes')">Inspiration</a>
+                </nav>
+                <div class="header-icons">
+                    <i class="fas fa-search" onclick="alert('🔍 Search Luxury Collection')"></i>
+                    <i class="far fa-bell" onclick="showNotification('🔔 You have 5 VIP notifications')"></i>
+                    <div style="position: relative;">
+                        <i class="fas fa-shopping-bag" onclick="showSection('cart')"></i>
+                        <span class="cart-count" id="header-cart-count">0</span>
+                    </div>
+                    <span class="user-badge" id="header-username">VIJAY K</span>
+                    <i class="fas fa-sign-out-alt" onclick="logout()" style="color: var(--danger);"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <div class="container">
+            <div class="dashboard">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="user-name" style="font-size: 1.5rem; font-weight: 700; color: var(--primary-700);" id="sidebar-username">Vijay Karthik</div>
+                        <div class="user-email" style="color: var(--text-gray);">vijay.karthik@luxury.com</div>
+                        <div style="margin-top: 1rem; background: var(--accent-gradient); padding: 0.3rem; border-radius: 30px; color: var(--text-dark); font-weight: 700;">
+                            ⭐ PLATINUM VIP ⭐
+                        </div>
+                    </div>
+                    
+                    <ul class="sidebar-menu">
+                        <li class="active" onclick="showSection('home')">
+                            <i class="fas fa-home"></i> Dashboard
+                        </li>
+                        <li onclick="showSection('products')">
+                            <i class="fas fa-gem"></i> Luxury Products
+                        </li>
+                        <li onclick="showSection('orders')">
+                            <i class="fas fa-shopping-bag"></i> My Orders
+                        </li>
+                        <li onclick="showSection('cart')">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span style="margin-left: auto; background: var(--accent-gradient); padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.8rem; color: var(--text-dark);" id="sidebar-cart-count">0</span>
+                        </li>
+                        <li onclick="showSection('wishlist')">
+                            <i class="fas fa-heart"></i> Wishlist (24)
+                        </li>
+                        <li onclick="showSection('account')">
+                            <i class="fas fa-user-cog"></i> VIP Settings
+                        </li>
+                        <li onclick="showSection('analytics')">
+                            <i class="fas fa-chart-line"></i> Analytics
+                        </li>
+                        <li onclick="showSection('quotes')">
+                            <i class="fas fa-quote-right"></i> Daily Quotes
+                        </li>
+                        <li onclick="logout()" style="color: var(--danger);">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="main-content" id="main-content-area">
+                    <!-- Content will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle" style="color: var(--accent-500); margin-right: 0.5rem;"></i>
+        <span id="notification-message">Action completed</span>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3 id="modal-title" style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--primary-700);">Details</h3>
+            <i class="fas fa-times modal-close" onclick="closeModal()" style="font-size: 1.5rem; cursor: pointer; color: var(--text-gray);"></i>
+        </div>
+        <div id="modal-content"></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeModal()" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;"></div>
+
+    <script>
+        // ==================== INSPIRATIONAL QUOTES DATABASE ====================
+        const quotes = [
+            {
+                text: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+                author: "Winston Churchill",
+                title: "Inspirational Leader"
+            },
+            {
+                text: "The only way to do great work is to love what you do. If you haven't found it yet, keep looking.",
+                author: "Steve Jobs",
+                title: "Apple Founder"
+            },
+            {
+                text: "Don't let the fear of striking out keep you from playing the game.",
+                author: "Vijay Karthik",
+                title: "Visionary Entrepreneur"
+            },
+            {
+                text: "The future belongs to those who believe in the beauty of their dreams.",
+                author: "Eleanor Roosevelt",
+                title: "Humanitarian"
+            },
+            {
+                text: "It does not matter how slowly you go as long as you do not stop.",
+                author: "Confucius",
+                title: "Philosopher"
+            },
+            {
+                text: "Believe you can and you're halfway there.",
+                author: "Theodore Roosevelt",
+                title: "US President"
+            },
+            {
+                text: "Your time is limited, don't waste it living someone else's life.",
+                author: "Steve Jobs",
+                title: "Innovator"
+            },
+            {
+                text: "The best way to predict the future is to create it.",
+                author: "Peter Drucker",
+                title: "Management Consultant"
+            },
+            {
+                text: "Success usually comes to those who are too busy to be looking for it.",
+                author: "Henry David Thoreau",
+                title: "Philosopher"
+            },
+            {
+                text: "Don't watch the clock; do what it does. Keep going.",
+                author: "Sam Levenson",
+                title: "Author"
+            },
+            {
+                text: "The only limit to our realization of tomorrow will be our doubts of today.",
+                author: "Franklin D. Roosevelt",
+                title: "US President"
+            },
+            {
+                text: "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+                author: "Zig Ziglar",
+                title: "Motivational Speaker"
+            }
+        ];
+
+        // ==================== 50+ PRODUCTS DATABASE ====================
+        const products = [
+            // Electronics (10 products)
+            { id: 1, name: "iPhone 15 Pro Max", category: "ELECTRONICS", price: 1499.99, oldPrice: 1699.99, stock: 25, rating: 4.9, image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500", description: "Latest Apple flagship with titanium body", brand: "Apple" },
+            { id: 2, name: "MacBook Pro 16", category: "ELECTRONICS", price: 2499.99, oldPrice: 2799.99, stock: 15, rating: 4.9, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500", description: "M3 Max chip, 64GB RAM", brand: "Apple" },
+            { id: 3, name: "Samsung S24 Ultra", category: "ELECTRONICS", price: 1399.99, oldPrice: 1599.99, stock: 30, rating: 4.8, image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500", description: "200MP camera, AI features", brand: "Samsung" },
+            { id: 4, name: "Sony WH-1000XM5", category: "ELECTRONICS", price: 399.99, oldPrice: 499.99, stock: 50, rating: 4.9, image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500", description: "Industry-leading noise cancellation", brand: "Sony" },
+            { id: 5, name: "iPad Pro 12.9", category: "ELECTRONICS", price: 1299.99, oldPrice: 1499.99, stock: 20, rating: 4.8, image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500", description: "M2 chip, Liquid Retina XDR", brand: "Apple" },
+            { id: 6, name: "Apple Watch Ultra 2", category: "ELECTRONICS", price: 799.99, oldPrice: 899.99, stock: 35, rating: 4.7, image: "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500", description: "Titanium, dive computer", brand: "Apple" },
+            { id: 7, name: "PS5 Pro", category: "ELECTRONICS", price: 699.99, oldPrice: 799.99, stock: 12, rating: 4.9, image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500", description: "4K gaming, ray tracing", brand: "Sony" },
+            { id: 8, name: "DJI Mavic 3 Pro", category: "ELECTRONICS", price: 2199.99, oldPrice: 2499.99, stock: 8, rating: 4.8, image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500", description: "Triple camera, 46min flight", brand: "DJI" },
+            { id: 9, name: "GoPro Hero 12", category: "ELECTRONICS", price: 399.99, oldPrice: 499.99, stock: 45, rating: 4.7, image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=500", description: "5.3K video, waterproof", brand: "GoPro" },
+            { id: 10, name: "Bose Soundbar 900", category: "ELECTRONICS", price: 899.99, oldPrice: 1099.99, stock: 18, rating: 4.8, image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500", description: "Dolby Atmos, voice control", brand: "Bose" },
+
+            // Fashion (15 products)
+            { id: 11, name: "Gucci Leather Jacket", category: "FASHION", price: 2999.99, oldPrice: 3999.99, stock: 5, rating: 4.9, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500", description: "Italian leather, limited edition", brand: "Gucci" },
+            { id: 12, name: "Louis Vuitton Bag", category: "FASHION", price: 4599.99, oldPrice: 5299.99, stock: 3, rating: 5.0, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500", description: "Signature monogram", brand: "Louis Vuitton" },
+            { id: 13, name: "Rolex Submariner", category: "ACCESSORIES", price: 14999.99, oldPrice: 17999.99, stock: 2, rating: 5.0, image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500", description: "Automatic, ceramic bezel", brand: "Rolex" },
+            { id: 14, name: "Prada Sunglasses", category: "ACCESSORIES", price: 459.99, oldPrice: 599.99, stock: 25, rating: 4.7, image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500", description: "UV protection, polarized", brand: "Prada" },
+            { id: 15, name: "Balmain Blazer", category: "FASHION", price: 2899.99, oldPrice: 3499.99, stock: 7, rating: 4.8, image: "https://images.unsplash.com/photo-1592878901332-99d9b3f7fe5e?w=500", description: "Wool blend, tailored fit", brand: "Balmain" },
+            { id: 16, name: "Christian Louboutin Shoes", category: "FASHION", price: 1299.99, oldPrice: 1599.99, stock: 10, rating: 4.9, image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500", description: "Red sole, patent leather", brand: "Louboutin" },
+            { id: 17, name: "Hermès Scarf", category: "ACCESSORIES", price: 899.99, oldPrice: 1099.99, stock: 15, rating: 4.8, image: "https://images.unsplash.com/photo-1584036570351-b3070a4b6d6e?w=500", description: "Silk twill, hand-rolled edges", brand: "Hermès" },
+            { id: 18, name: "Versace Jeans", category: "FASHION", price: 899.99, oldPrice: 1199.99, stock: 20, rating: 4.6, image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500", description: "Medusa logo, premium denim", brand: "Versace" },
+            { id: 19, name: "Dior Sneakers", category: "FASHION", price: 1299.99, oldPrice: 1599.99, stock: 12, rating: 4.7, image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500", description: "Low-top, Dior Oblique", brand: "Dior" },
+            { id: 20, name: "Fendi Belt", category: "ACCESSORIES", price: 699.99, oldPrice: 899.99, stock: 30, rating: 4.7, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500", description: "FF buckle, leather", brand: "Fendi" },
+            { id: 21, name: "Armani Suit", category: "FASHION", price: 3499.99, oldPrice: 4299.99, stock: 6, rating: 4.9, image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500", description: "Wool, made in Italy", brand: "Armani" },
+            { id: 22, name: "Burberry Trench Coat", category: "FASHION", price: 2899.99, oldPrice: 3499.99, stock: 8, rating: 4.8, image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500", description: "Classic check lining", brand: "Burberry" },
+            { id: 23, name: "Cartier Love Bracelet", category: "JEWELRY", price: 6799.99, oldPrice: 7999.99, stock: 4, rating: 5.0, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500", description: "18k gold, screw motif", brand: "Cartier" },
+            { id: 24, name: "Tiffany Necklace", category: "JEWELRY", price: 3299.99, oldPrice: 3999.99, stock: 9, rating: 4.9, image: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500", description: "Diamond, platinum", brand: "Tiffany" },
+            { id: 25, name: "Montblanc Pen", category: "ACCESSORIES", price: 899.99, oldPrice: 1199.99, stock: 22, rating: 4.7, image: "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=500", description: "Gold nib, resin", brand: "Montblanc" },
+
+            // Home & Living (10 products)
+            { id: 26, name: "Vitra Lounge Chair", category: "HOME", price: 5499.99, oldPrice: 6499.99, stock: 3, rating: 4.9, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=500", description: "Eames design, leather", brand: "Vitra" },
+            { id: 27, name: "Bang & Olufsen Speaker", category: "AUDIO", price: 2599.99, oldPrice: 2999.99, stock: 12, rating: 4.8, image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500", description: "Wireless, aluminum", brand: "B&O" },
+            { id: 28, name: "Le Creuset Cookware Set", category: "HOME", price: 899.99, oldPrice: 1199.99, stock: 25, rating: 4.8, image: "https://images.unsplash.com/photo-1584990347449-a7aa9a3050c0?w=500", description: "Cast iron, 7-piece", brand: "Le Creuset" },
+            { id: 29, name: "Frette Bed Sheets", category: "HOME", price: 1299.99, oldPrice: 1699.99, stock: 18, rating: 4.7, image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500", description: "Egyptian cotton, 1000 thread", brand: "Frette" },
+            { id: 30, name: "Christofle Silverware", category: "HOME", price: 3499.99, oldPrice: 4299.99, stock: 6, rating: 4.9, image: "https://images.unsplash.com/photo-1584990347449-a7aa9a3050c0?w=500", description: "24-piece set, silver", brand: "Christofle" },
+            { id: 31, name: "Nespresso Vertuo", category: "APPLIANCES", price: 299.99, oldPrice: 399.99, stock: 45, rating: 4.6, image: "https://images.unsplash.com/photo-1520975661595-6453be3f7070?w=500", description: "Coffee machine, milk frother", brand: "Nespresso" },
+            { id: 32, name: "Dyson V15 Vacuum", category: "APPLIANCES", price: 799.99, oldPrice: 949.99, stock: 22, rating: 4.8, image: "https://images.unsplash.com/photo-1558317374-1c6f5e5c4f3f?w=500", description: "Laser detection", brand: "Dyson" },
+            { id: 33, name: "SMEG Fridge", category: "APPLIANCES", price: 2199.99, oldPrice: 2599.99, stock: 7, rating: 4.7, image: "https://images.unsplash.com/photo-1584568694244-14c7cbb8cb2d?w=500", description: "Retro style, 50s design", brand: "SMEG" },
+            { id: 34, name: "Vitamix Blender", category: "APPLIANCES", price: 649.99, oldPrice: 799.99, stock: 28, rating: 4.9, image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=500", description: "Professional grade", brand: "Vitamix" },
+            { id: 35, name: "De'Longhi Coffee Machine", category: "APPLIANCES", price: 1499.99, oldPrice: 1799.99, stock: 12, rating: 4.8, image: "https://images.unsplash.com/photo-1520975661595-6453be3f7070?w=500", description: "Bean to cup", brand: "De'Longhi" },
+
+            // Sports & Fitness (8 products)
+            { id: 36, name: "Peloton Bike+", category: "FITNESS", price: 2499.99, oldPrice: 2999.99, stock: 10, rating: 4.8, image: "https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=500", description: "HD touchscreen", brand: "Peloton" },
+            { id: 37, name: "Tonal Smart Gym", category: "FITNESS", price: 3995.99, oldPrice: 4995.99, stock: 5, rating: 4.9, image: "https://images.unsplash.com/photo-1637344819984-a20dbe5b2f61?w=500", description: "AI-powered weight system", brand: "Tonal" },
+            { id: 38, name: "Theragun Pro", category: "FITNESS", price: 599.99, oldPrice: 699.99, stock: 30, rating: 4.8, image: "https://images.unsplash.com/photo-1626735305853-5e89c5a9b5c5?w=500", description: "Percussion massage", brand: "Therabody" },
+            { id: 39, name: "Garmin Fenix 7", category: "FITNESS", price: 799.99, oldPrice: 899.99, stock: 25, rating: 4.7, image: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?w=500", description: "GPS sports watch", brand: "Garmin" },
+            { id: 40, name: "Hydro Flask", category: "FITNESS", price: 49.99, oldPrice: 69.99, stock: 100, rating: 4.6, image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500", description: "Insulated, stainless steel", brand: "Hydro Flask" },
+            { id: 41, name: "Lululemon Leggings", category: "FASHION", price: 128.99, oldPrice: 158.99, stock: 60, rating: 4.8, image: "https://images.unsplash.com/photo-1506624437116-b6b4cc0bdc0c?w=500", description: "Align pants", brand: "Lululemon" },
+            { id: 42, name: "Nike Air Max", category: "FASHION", price: 189.99, oldPrice: 229.99, stock: 45, rating: 4.7, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500", description: "Air cushioning", brand: "Nike" },
+            { id: 43, name: "Adidas Ultraboost", category: "FASHION", price: 179.99, oldPrice: 209.99, stock: 50, rating: 4.7, image: "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500", description: "Running shoes", brand: "Adidas" },
+
+            // Books & Media (7 products)
+            { id: 44, name: "Steve Jobs Biography", category: "BOOKS", price: 29.99, oldPrice: 39.99, stock: 80, rating: 4.9, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500", description: "Walter Isaacson", brand: "Book" },
+            { id: 45, name: "Atomic Habits", category: "BOOKS", price: 24.99, oldPrice: 32.99, stock: 95, rating: 4.9, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500", description: "James Clear", brand: "Book" },
+            { id: 46, name: "Kindle Paperwhite", category: "ELECTRONICS", price: 149.99, oldPrice: 179.99, stock: 40, rating: 4.8, image: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?w=500", description: "Waterproof, 6.8", brand: "Amazon" },
+            { id: 47, name: "Noise Cancelling Headphones", category: "AUDIO", price: 349.99, oldPrice: 399.99, stock: 35, rating: 4.8, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500", description: "Bose QuietComfort", brand: "Bose" },
+            { id: 48, name: "The Alchemist", category: "BOOKS", price: 19.99, oldPrice: 24.99, stock: 120, rating: 4.8, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500", description: "Paulo Coelho", brand: "Book" },
+            { id: 49, name: "Think and Grow Rich", category: "BOOKS", price: 14.99, oldPrice: 19.99, stock: 150, rating: 4.7, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500", description: "Napoleon Hill", brand: "Book" },
+            { id: 50, name: "iPad Mini", category: "ELECTRONICS", price: 499.99, oldPrice: 599.99, stock: 28, rating: 4.7, image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500", description: "A15 chip, 8.3", brand: "Apple" }
+        ];
+
+        // ==================== GLOBAL VARIABLES ====================
+        let currentUser = null;
+        let cart = [];
+        let orders = [];
+        let wishlist = [];
+        let walletBalance = 25000.00;
+        let loyaltyPoints = 5000;
+        let currentQuoteIndex = 0;
+        let quoteInterval;
+
+        // Load data
+        function loadData() {
+            if (localStorage.getItem('vijayCart')) {
+                cart = JSON.parse(localStorage.getItem('vijayCart'));
+            }
+            if (localStorage.getItem('vijayOrders')) {
+                orders = JSON.parse(localStorage.getItem('vijayOrders'));
+            } else {
+                // Sample orders
+                orders = [
+                    { id: 'VIP001', date: '2026-03-15', items: [{ name: 'iPhone 15 Pro Max', qty: 1, price: 1499.99 }], total: 1499.99, status: 'delivered' },
+                    { id: 'VIP002', date: '2026-03-18', items: [{ name: 'Rolex Submariner', qty: 1, price: 14999.99 }], total: 14999.99, status: 'processing' },
+                    { id: 'VIP003', date: '2026-03-19', items: [{ name: 'Gucci Leather Jacket', qty: 1, price: 2999.99 }], total: 2999.99, status: 'cancelled' },
+                    { id: 'VIP004', date: '2026-03-20', items: [{ name: 'Louis Vuitton Bag', qty: 1, price: 4599.99 }], total: 4599.99, status: 'delivered' },
+                    { id: 'VIP005', date: '2026-03-21', items: [{ name: 'MacBook Pro', qty: 1, price: 2499.99 }], total: 2499.99, status: 'processing' }
+                ];
+                localStorage.setItem('vijayOrders', JSON.stringify(orders));
+            }
+        }
+
+        // ==================== QUOTE SLIDER FUNCTIONS ====================
+        function initQuoteSlider() {
+            const track = document.getElementById('quoteTrack');
+            const dotsContainer = document.getElementById('quoteDots');
+            
+            let html = '';
+            quotes.forEach((quote, index) => {
+                html += `
+                    <div class="quote-card">
+                        <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                        <div class="quote-text">"${quote.text}"</div>
+                        <div class="quote-author">- ${quote.author}</div>
+                        <div class="quote-title">${quote.title}</div>
+                    </div>
+                `;
+            });
+            track.innerHTML = html;
+
+            // Create dots
+            let dotsHtml = '';
+            quotes.forEach((_, index) => {
+                dotsHtml += `<div class="quote-dot ${index === 0 ? 'active' : ''}" onclick="goToQuote(${index})"></div>`;
+            });
+            dotsContainer.innerHTML = dotsHtml;
+
+            // Start auto slide
+            startQuoteSlider();
+        }
+
+        function startQuoteSlider() {
+            quoteInterval = setInterval(() => {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                updateQuoteSlider();
+            }, 5000);
+        }
+
+        function goToQuote(index) {
+            currentQuoteIndex = index;
+            updateQuoteSlider();
+            clearInterval(quoteInterval);
+            startQuoteSlider();
+        }
+
+        function updateQuoteSlider() {
+            const track = document.getElementById('quoteTrack');
+            const dots = document.querySelectorAll('.quote-dot');
+            
+            track.style.transform = `translateX(-${currentQuoteIndex * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                if (index === currentQuoteIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // ==================== LOGIN FUNCTION ====================
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'vijaykarthik' && password === 'Test@123') {
+                currentUser = { name: 'Vijay Karthik', username: 'vijaykarthik', email: 'vijay.karthik@luxury.com', tier: 'Platinum VIP' };
+                
+                document.getElementById('login-page').style.display = 'none';
+                document.getElementById('main-store').classList.add('active');
+                
+                document.getElementById('welcome-user').textContent = 'Vijay Karthik';
+                document.getElementById('header-username').textContent = 'VIJAY K';
+                document.getElementById('sidebar-username').textContent = 'Vijay Karthik';
+                
+                loadData();
+                updateCartCount();
+                initQuoteSlider();
+                showSection('home');
+                
+                showNotification('✨ Welcome to Vijay Karthik Luxury Store! ✨');
+            } else {
+                alert('❌ Invalid credentials! Use: vijaykarthik / Test@123');
+            }
+        }
+
+        // ==================== LOGOUT ====================
+        function logout() {
+            if (confirm('Exit Vijay Karthik Store?')) {
+                currentUser = null;
+                document.getElementById('login-page').style.display = 'flex';
+                document.getElementById('main-store').classList.remove('active');
+                clearInterval(quoteInterval);
+                showNotification('👋 See you soon, Vijay Karthik!');
+            }
+        }
+
+        // ==================== SECTION RENDERING ====================
+        function showSection(section) {
+            document.querySelectorAll('.sidebar-menu li').forEach(li => {
+                li.classList.remove('active');
+            });
+
+            const activeLi = Array.from(document.querySelectorAll('.sidebar-menu li')).find(li => 
+                li.textContent.toLowerCase().includes(section)
+            );
+            if (activeLi) activeLi.classList.add('active');
+
+            switch(section) {
+                case 'home':
+                    renderHome();
+                    break;
+                case 'products':
+                    renderProducts();
+                    break;
+                case 'orders':
+                    renderOrders();
+                    break;
+                case 'cart':
+                    renderCart();
+                    break;
+                case 'wishlist':
+                    renderWishlist();
+                    break;
+                case 'account':
+                    renderAccount();
+                    break;
+                case 'analytics':
+                    renderAnalytics();
+                    break;
+                case 'quotes':
+                    renderQuotes();
+                    break;
+            }
+        }
+
+        // ==================== HOME DASHBOARD ====================
+        function renderHome() {
+            const totalSpent = orders.reduce((sum, order) => sum + order.total, 0);
+            const pendingOrders = orders.filter(o => o.status === 'processing').length;
+            const uniqueProducts = products.length;
+            
+            const html = `
+                <div class="content-header">
+                    <h2>Vijay Karthik Dashboard</h2>
+                    <button class="login-btn" style="width: auto; padding: 1rem 2rem;" onclick="showSection('products')">
+                        <i class="fas fa-gem"></i> Explore Luxury Collection
+                    </button>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <div class="stat-number">${orders.length}</div>
+                        <div>Total Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-number">$${totalSpent.toLocaleString()}</div>
+                        <div>Lifetime Spend</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-number">${pendingOrders}</div>
+                        <div>Pending Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-wallet"></i>
+                        <div class="stat-number">$${walletBalance.toLocaleString()}</div>
+                        <div>Wallet Balance</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-number">${loyaltyPoints}</div>
+                        <div>Loyalty Points</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-crown"></i>
+                        <div class="stat-number">PLATINUM</div>
+                        <div>VIP Tier</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--primary-700); margin-bottom: 1.5rem;">
+                        <i class="fas fa-crown" style="color: var(--accent-500);"></i> Recent VIP Orders
+                    </h3>
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${orders.slice(0, 5).map(order => `
+                                <tr>
+                                    <td><strong>${order.id}</strong></td>
+                                    <td>${order.date}</td>
+                                    <td>${order.items.length} items</td>
+                                    <td>$${order.total.toLocaleString()}</td>
+                                    <td><span class="order-status status-${order.status}">${order.status}</span></td>
+                                    <td>
+                                        <button class="action-btn view-btn" style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background: var(--primary-100); color: var(--primary-700); cursor: pointer;" onclick="viewOrder('${order.id}')">View</button>
+                                        ${order.status === 'processing' ? 
+                                            `<button class="action-btn cancel-btn" style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background: #fee2e2; color: var(--danger); cursor: pointer;" onclick="cancelOrder('${order.id}')">Cancel</button>` : ''}
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--primary-700); margin-bottom: 1.5rem;">
+                        <i class="fas fa-gem" style="color: var(--accent-500);"></i> Featured Luxury Items
+                    </h3>
+                    <div class="product-grid">
+                        ${products.slice(0, 6).map(product => `
+                            <div class="product-card" onclick="quickView(${product.id})">
+                                <div class="product-badge">${product.stock < 10 ? '🔥 Limited Stock' : '✨ Premium'}</div>
+                                <div class="product-image">
+                                    <img src="${product.image}" onerror="this.src='https://via.placeholder.com/300?text=Luxury'">
+                                </div>
+                                <div class="product-category">${product.category}</div>
+                                <div class="product-title">${product.name}</div>
+                                <div class="product-price">$${product.price.toLocaleString()}</div>
+                                <div class="product-rating">
+                                    ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 ? '½' : ''} (${product.stock} in stock)
+                                </div>
+                                <div class="product-actions">
+                                    <button class="product-btn buy-btn" onclick="event.stopPropagation(); buyNow(${product.id})">Buy Now</button>
+                                    <button class="product-btn cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+                                    <button class="product-btn wishlist-btn" onclick="event.stopPropagation(); addToWishlist(${product.id})"><i class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== PRODUCTS PAGE (50+ Products) ====================
+        function renderProducts() {
+            const categories = [...new Set(products.map(p => p.category))];
+            
+            const html = `
+                <div class="content-header">
+                    <h2>Luxury Collection (${products.length} items)</h2>
+                    <div style="display: flex; gap: 1rem;">
+                        <select id="categoryFilter" style="padding: 0.8rem; border-radius: 30px; border: 2px solid var(--border-light);">
+                            <option value="all">All Categories</option>
+                            ${categories.map(cat => `<option value="${cat}">${cat}</option>`).join('')}
+                        </select>
+                        <input type="text" id="searchInput" placeholder="Search luxury..." style="padding: 0.8rem; border-radius: 30px; border: 2px solid var(--border-light); width: 250px;">
+                        <button class="login-btn" style="width: auto; padding: 0.8rem 2rem;" onclick="filterProducts()">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-grid" id="products-grid">
+                    ${products.map(product => `
+                        <div class="product-card" onclick="quickView(${product.id})" data-category="${product.category}" data-name="${product.name.toLowerCase()}">
+                            <div class="product-badge">${product.stock < 5 ? '🔥 Last Chance' : product.brand}</div>
+                            <div class="product-image">
+                                <img src="${product.image}" onerror="this.src='https://via.placeholder.com/300?text=Luxury'">
+                            </div>
+                            <div class="product-category">${product.category} | ${product.brand}</div>
+                            <div class="product-title">${product.name}</div>
+                            <div class="product-price">$${product.price.toLocaleString()}</div>
+                            <div class="product-rating">
+                                ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 ? '½' : ''} (${product.stock} left)
+                            </div>
+                            <div class="product-actions">
+                                <button class="product-btn buy-btn" onclick="event.stopPropagation(); buyNow(${product.id})">Buy Now</button>
+                                <button class="product-btn cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})"><i class="fas fa-cart-plus"></i></button>
+                                <button class="product-btn wishlist-btn" onclick="event.stopPropagation(); addToWishlist(${product.id})"><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== QUOTES PAGE ====================
+        function renderQuotes() {
+            const html = `
+                <div class="content-header">
+                    <h2>Daily Inspiration</h2>
+                    <i class="fas fa-quote-right" style="font-size: 3rem; color: var(--accent-500);"></i>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    ${quotes.map((quote, index) => `
+                        <div style="background: linear-gradient(135deg, var(--primary-50), var(--secondary-50)); padding: 2rem; border-radius: 30px; border: 2px solid var(--accent-500);">
+                            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent-500); margin-bottom: 1rem;"></i>
+                            <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 1rem;">"${quote.text}"</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="color: var(--primary-700);">- ${quote.author}</strong>
+                                    <p style="color: var(--text-gray);">${quote.title}</p>
+                                </div>
+                                <button class="product-btn wishlist-btn" onclick="copyQuote('${quote.text}')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== WISHLIST ====================
+        function renderWishlist() {
+            const wishlistItems = wishlist.length ? wishlist : [1, 3, 5, 11, 13, 26]; // Sample wishlist
+            
+            const html = `
+                <div class="content-header">
+                    <h2>My Wishlist (${wishlistItems.length} items)</h2>
+                    <button class="login-btn" style="width: auto;" onclick="clearWishlist()">
+                        <i class="fas fa-trash"></i> Clear Wishlist
+                    </button>
+                </div>
+                
+                <div class="product-grid">
+                    ${wishlistItems.map(id => {
+                        const product = products.find(p => p.id === id) || products[0];
+                        return `
+                            <div class="product-card" onclick="quickView(${product.id})">
+                                <div class="product-badge" style="background: var(--accent-gradient);">❤️ Wishlist</div>
+                                <div class="product-image">
+                                    <img src="${product.image}" onerror="this.src='https://via.placeholder.com/300'">
+                                </div>
+                                <div class="product-category">${product.category}</div>
+                                <div class="product-title">${product.name}</div>
+                                <div class="product-price">$${product.price.toLocaleString()}</div>
+                                <div class="product-actions">
+                                    <button class="product-btn buy-btn" onclick="event.stopPropagation(); buyNow(${product.id})">Buy Now</button>
+                                    <button class="product-btn cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+                                    <button class="product-btn wishlist-btn" onclick="event.stopPropagation(); removeFromWishlist(${product.id})" style="background: #fee2e2; color: var(--danger);">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== ORDERS PAGE ====================
+        function renderOrders() {
+            const html = `
+                <div class="content-header">
+                    <h2>My Orders (${orders.length})</h2>
+                    <span class="user-badge">Total Spent: $${orders.reduce((s, o) => s + o.total, 0).toLocaleString()}</span>
+                </div>
+                
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${orders.map(order => `
+                            <tr>
+                                <td><strong>${order.id}</strong></td>
+                                <td>${order.date}</td>
+                                <td>
+                                    ${order.items.map(item => `• ${item.name} x${item.qty}`).join('<br>')}
+                                </td>
+                                <td><strong>$${order.total.toLocaleString()}</strong></td>
+                                <td><span class="order-status status-${order.status}">${order.status}</span></td>
+                                <td>
+                                    <button class="action-btn view-btn" onclick="viewOrder('${order.id}')">View</button>
+                                    ${order.status === 'processing' ? 
+                                        `<button class="action-btn cancel-btn" onclick="cancelOrder('${order.id}')">Cancel</button>` : ''}
+                                    ${order.status === 'delivered' ? 
+                                        `<button class="action-btn view-btn" onclick="returnOrder('${order.id}')">Return</button>` : ''}
+                                    <button class="action-btn view-btn" onclick="trackOrder('${order.id}')">Track</button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== CART PAGE ====================
+        function renderCart() {
+            if (cart.length === 0) {
+                document.getElementById('main-content-area').innerHTML = `
+                    <div class="content-header">
+                        <h2>Shopping Cart</h2>
+                    </div>
+                    <div style="text-align: center; padding: 4rem;">
+                        <i class="fas fa-shopping-cart" style="font-size: 5rem; color: var(--text-gray);"></i>
+                        <h3 style="margin: 1rem 0;">Your cart is empty</h3>
+                        <button class="login-btn" onclick="showSection('products')">Explore Luxury Collection</button>
+                    </div>
+                `;
+                return;
+            }
+
+            let subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            let tax = subtotal * 0.1;
+            let total = subtotal + tax;
+
+            const html = `
+                <div class="content-header">
+                    <h2>Shopping Cart (${cart.length} items)</h2>
+                    <button class="login-btn" style="width: auto; background: transparent; color: var(--danger); border: 2px solid var(--danger);" onclick="clearCart()">
+                        <i class="fas fa-trash"></i> Clear Cart
+                    </button>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 400px; gap: 2rem;">
+                    <div>
+                        ${cart.map(item => `
+                            <div class="cart-item" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border-radius: 20px; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+                                <img src="${item.image}" style="width: 100px; height: 100px; border-radius: 15px; object-fit: cover;">
+                                <div style="flex: 1;">
+                                    <h4 style="font-size: 1.2rem;">${item.name}</h4>
+                                    <p style="color: var(--accent-600); font-weight: 700;">$${item.price.toLocaleString()}</p>
+                                </div>
+                                <div class="cart-quantity" style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border-light); background: white; cursor: pointer;">-</button>
+                                    <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})" style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border-light); background: white; cursor: pointer;">+</button>
+                                </div>
+                                <div style="font-weight: 700; min-width: 100px;">$${(item.price * item.quantity).toLocaleString()}</div>
+                                <i class="fas fa-trash" onclick="removeFromCart(${item.id})" style="color: var(--danger); cursor: pointer;"></i>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, var(--primary-50), var(--secondary-50)); padding: 2rem; border-radius: 30px; height: fit-content; border: 2px solid var(--accent-500);">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Order Summary</h3>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span>Subtotal:</span>
+                                <span><strong>$${subtotal.toLocaleString()}</strong></span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span>Tax (10%):</span>
+                                <span>$${tax.toLocaleString()}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span>VIP Discount:</span>
+                                <span style="color: var(--success);">-$${(subtotal * 0.05).toLocaleString()}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span>Loyalty Points Earned:</span>
+                                <span style="color: var(--accent-500);">+${Math.floor(total)}</span>
+                            </div>
+                            <hr style="margin: 1rem 0;">
+                            <div style="display: flex; justify-content: space-between; font-size: 1.8rem; font-weight: 700;">
+                                <span>Total:</span>
+                                <span style="color: var(--primary-700);">$${(total - subtotal * 0.05).toLocaleString()}</span>
+                            </div>
+                        </div>
+                        
+                        <button class="login-btn" style="width: 100%; padding: 1.5rem; font-size: 1.2rem;" onclick="checkout()">
+                            <i class="fas fa-lock"></i> Proceed to Secure Checkout
+                        </button>
+                        
+                        <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                            <i class="fas fa-shield-alt" style="color: var(--success);"></i> 256-bit SSL Secure
+                        </p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== ACCOUNT PAGE ====================
+        function renderAccount() {
+            const html = `
+                <div class="content-header">
+                    <h2>VIP Account Settings</h2>
+                    <span class="user-badge" style="background: var(--accent-gradient); color: var(--text-dark);">✨ Platinum Elite ✨</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+                    <div>
+                        <div class="user-avatar" style="width: 200px; height: 200px; font-size: 5rem;">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <button class="login-btn" style="width: 100%; margin-top: 1rem;" onclick="alert('VIP photo updated')">
+                            Update Avatar
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <div class="input-group" style="margin-bottom: 1.5rem;">
+                            <label style="font-weight: 600; color: var(--primary-700);">Full Name</label>
+                            <input type="text" value="Vijay Karthik" style="width: 100%; padding: 1rem; border-radius: 15px; border: 2px solid var(--border-light);">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 1.5rem;">
+                            <label style="font-weight: 600; color: var(--primary-700);">Email</label>
+                            <input type="email" value="vijay.karthik@luxury.com" style="width: 100%; padding: 1rem; border-radius: 15px; border: 2px solid var(--border-light);">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 1.5rem;">
+                            <label style="font-weight: 600; color: var(--primary-700);">Phone</label>
+                            <input type="text" value="+1 (555) 123-4567" style="width: 100%; padding: 1rem; border-radius: 15px; border: 2px solid var(--border-light);">
+                        </div>
+                        
+                        <h3 style="margin: 2rem 0 1rem;">VIP Benefits</h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                            <div style="background: var(--primary-50); padding: 1.5rem; border-radius: 20px;">
+                                <i class="fas fa-truck" style="color: var(--accent-500); font-size: 1.5rem;"></i>
+                                <h4>Free Express Shipping</h4>
+                                <p style="color: var(--text-gray);">2-day delivery</p>
+                            </div>
+                            <div style="background: var(--primary-50); padding: 1.5rem; border-radius: 20px;">
+                                <i class="fas fa-gem" style="color: var(--accent-500); font-size: 1.5rem;"></i>
+                                <h4>10% Cashback</h4>
+                                <p style="color: var(--text-gray);">On all purchases</p>
+                            </div>
+                            <div style="background: var(--primary-50); padding: 1.5rem; border-radius: 20px;">
+                                <i class="fas fa-calendar-check" style="color: var(--accent-500); font-size: 1.5rem;"></i>
+                                <h4>Priority Support</h4>
+                                <p style="color: var(--text-gray);">24/7 dedicated line</p>
+                            </div>
+                            <div style="background: var(--primary-50); padding: 1.5rem; border-radius: 20px;">
+                                <i class="fas fa-gift" style="color: var(--accent-500); font-size: 1.5rem;"></i>
+                                <h4>Birthday Gift</h4>
+                                <p style="color: var(--text-gray);">Exclusive present</p>
+                            </div>
+                        </div>
+                        
+                        <button class="login-btn" style="margin-top: 2rem;" onclick="alert('Profile updated!')">
+                            <i class="fas fa-save"></i> Update Profile
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== ANALYTICS ====================
+        function renderAnalytics() {
+            const totalSpent = orders.reduce((sum, order) => sum + order.total, 0);
+            const avgOrder = orders.length ? totalSpent / orders.length : 0;
+            const electronicsCount = products.filter(p => p.category === 'ELECTRONICS').length;
+            const fashionCount = products.filter(p => p.category === 'FASHION').length;
+            
+            const html = `
+                <div class="content-header">
+                    <h2>Luxury Analytics</h2>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-number">${orders.length}</div>
+                        <div>Orders (30 days)</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-number">$${totalSpent.toLocaleString()}</div>
+                        <div>Lifetime Value</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calculator"></i>
+                        <div class="stat-number">$${avgOrder.toFixed(0)}</div>
+                        <div>Avg Order Value</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-number">4.9</div>
+                        <div>Avg Rating</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 30px;">
+                        <h3>Category Preferences</h3>
+                        <div style="margin-top: 1rem;">
+                            <div>Electronics: ${electronicsCount} products</div>
+                            <div style="height: 10px; background: var(--primary-100); border-radius: 5px; margin: 0.5rem 0;">
+                                <div style="width: ${(electronicsCount/50)*100}%; height: 100%; background: var(--primary-gradient); border-radius: 5px;"></div>
+                            </div>
+                            <div>Fashion: ${fashionCount} products</div>
+                            <div style="height: 10px; background: var(--primary-100); border-radius: 5px; margin: 0.5rem 0;">
+                                <div style="width: ${(fashionCount/50)*100}%; height: 100%; background: var(--secondary-gradient); border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 30px;">
+                        <h3>Spending Pattern</h3>
+                        <div style="text-align: center; padding: 2rem;">
+                            <i class="fas fa-chart-pie" style="font-size: 5rem; color: var(--accent-500);"></i>
+                            <p>Most spent on: <strong>Electronics (65%)</strong></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('main-content-area').innerHTML = html;
+        }
+
+        // ==================== CART FUNCTIONS ====================
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('vijayCart', JSON.stringify(cart));
+            updateCartCount();
+            showNotification(`✨ ${product.name} added to cart! ✨`);
+        }
+
+        function addToWishlist(productId) {
+            showNotification('❤️ Added to wishlist!');
+        }
+
+        function removeFromWishlist(productId) {
+            showNotification('🗑️ Removed from wishlist');
+        }
+
+        function updateQuantity(productId, newQty) {
+            if (newQty < 1) {
+                removeFromCart(productId);
+                return;
+            }
+            
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity = newQty;
+                localStorage.setItem('vijayCart', JSON.stringify(cart));
+                updateCartCount();
+                renderCart();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('vijayCart', JSON.stringify(cart));
+            updateCartCount();
+            renderCart();
+            showNotification('🗑️ Item removed from cart');
+        }
+
+        function clearCart() {
+            if (confirm('Clear all items from cart?')) {
+                cart = [];
+                localStorage.setItem('vijayCart', JSON.stringify(cart));
+                updateCartCount();
+                renderCart();
+                showNotification('🗑️ Cart cleared');
+            }
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('header-cart-count').textContent = count;
+            document.getElementById('sidebar-cart-count').textContent = count;
+        }
+
+        // ==================== ORDER FUNCTIONS ====================
+        function buyNow(productId) {
+            addToCart(productId);
+            setTimeout(() => {
+                showSection('cart');
+            }, 500);
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Cart is empty!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            if (total > walletBalance) {
+                alert('Insufficient wallet balance! Please add funds.');
+                return;
+            }
+
+            if (confirm(`Proceed to checkout? Total: $${total.toLocaleString()}`)) {
+                walletBalance -= total;
+                loyaltyPoints += Math.floor(total);
+                
+                const newOrder = {
+                    id: 'VIP' + Math.floor(Math.random() * 1000),
+                    date: new Date().toISOString().split('T')[0],
+                    items: cart.map(item => ({ name: item.name, qty: item.quantity, price: item.price })),
+                    total: total,
+                    status: 'processing'
+                };
+                
+                orders.unshift(newOrder);
+                localStorage.setItem('vijayOrders', JSON.stringify(orders));
+                
+                cart = [];
+                localStorage.setItem('vijayCart', JSON.stringify(cart));
+                updateCartCount();
+                
+                showNotification('✅ Order placed successfully! You earned ' + Math.floor(total) + ' points!');
+                showSection('orders');
+            }
+        }
+
+        function cancelOrder(orderId) {
+            if (confirm('Cancel this order?')) {
+                const order = orders.find(o => o.id === orderId);
+                if (order) {
+                    order.status = 'cancelled';
+                    walletBalance += order.total;
+                    localStorage.setItem('vijayOrders', JSON.stringify(orders));
+                    showNotification('❌ Order cancelled, refund processed');
+                    renderOrders();
+                }
+            }
+        }
+
+        function returnOrder(orderId) {
+            alert('Return request submitted! VIP support will contact you within 1 hour.');
+        }
+
+        function trackOrder(orderId) {
+            alert(`📦 Tracking order ${orderId}: Your package is being prepared for shipment.`);
+        }
+
+        function viewOrder(orderId) {
+            const order = orders.find(o => o.id === orderId);
+            if (!order) return;
+
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            modalContent.innerHTML = `
+                <h3 style="font-size: 1.5rem; color: var(--primary-700);">Order ${order.id}</h3>
+                <p style="color: var(--text-gray);">Date: ${order.date}</p>
+                <p>Status: <span class="order-status status-${order.status}">${order.status}</span></p>
+                <hr style="margin: 1rem 0;">
+                <h4>Items:</h4>
+                ${order.items.map(item => `
+                    <div style="display: flex; justify-content: space-between; margin: 0.5rem 0; padding: 0.5rem; background: var(--primary-50); border-radius: 10px;">
+                        <span>${item.name} x${item.qty}</span>
+                        <span><strong>$${(item.price * item.qty).toLocaleString()}</strong></span>
+                    </div>
+                `).join('')}
+                <hr style="margin: 1rem 0;">
+                <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700;">
+                    <span>Total:</span>
+                    <span style="color: var(--primary-700);">$${order.total.toLocaleString()}</span>
+                </div>
+            `;
+            
+            document.getElementById('modal-title').textContent = 'Order Details';
+            modal.classList.add('show');
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            modalContent.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <img src="${product.image}" style="width: 100%; border-radius: 20px;" onerror="this.src='https://via.placeholder.com/400?text=Luxury'">
+                    <div>
+                        <span class="product-badge" style="position: static; display: inline-block; margin-bottom: 1rem;">${product.brand}</span>
+                        <h2 style="font-size: 2rem; font-family: var(--font-heading);">${product.name}</h2>
+                        <p class="product-category" style="font-size: 1rem;">${product.category}</p>
+                        <div class="product-rating" style="font-size: 1.2rem; margin: 1rem 0;">
+                            ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 ? '½' : ''} (${product.rating} stars)
+                        </div>
+                        <p style="margin: 1rem 0;">${product.description}</p>
+                        <div style="background: var(--primary-50); padding: 1rem; border-radius: 15px; margin: 1rem 0;">
+                            <p><strong>Price:</strong> <span style="font-size: 2rem; color: var(--primary-700);">$${product.price.toLocaleString()}</span></p>
+                            <p><strong>In Stock:</strong> ${product.stock} units</p>
+                            <p><strong>Free Shipping:</strong> ✓ VIP Express</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                            <button class="login-btn" style="flex: 2;" onclick="buyNow(${product.id}); closeModal();">Buy Now</button>
+                            <button class="login-btn" style="flex: 1; background: var(--secondary-gradient);" onclick="addToCart(${product.id}); closeModal();"><i class="fas fa-cart-plus"></i></button>
+                            <button class="login-btn" style="flex: 1; background: var(--accent-gradient); color: var(--text-dark);" onclick="addToWishlist(${product.id}); closeModal();"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('modal-title').textContent = 'Luxury Product Details';
+            modal.classList.add('show');
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function filterProducts() {
+            const category = document.getElementById('categoryFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = products.filter(p => 
+                (category === 'all' || p.category === category) &&
+                (p.name.toLowerCase().includes(searchTerm) || p.brand.toLowerCase().includes(searchTerm))
+            );
+            
+            const grid = document.getElementById('products-grid');
+            if (grid) {
+                grid.innerHTML = filtered.map(product => `
+                    <div class="product-card" onclick="quickView(${product.id})">
+                        <div class="product-badge">${product.stock < 5 ? '🔥 Limited' : product.brand}</div>
+                        <div class="product-image">
+                            <img src="${product.image}" onerror="this.src='https://via.placeholder.com/300?text=Luxury'">
+                        </div>
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-title">${product.name}</div>
+                        <div class="product-price">$${product.price.toLocaleString()}</div>
+                        <div class="product-rating">
+                            ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 ? '½' : ''}
+                        </div>
+                        <div class="product-actions">
+                            <button class="product-btn buy-btn" onclick="event.stopPropagation(); buyNow(${product.id})">Buy</button>
+                            <button class="product-btn cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})"><i class="fas fa-cart-plus"></i></button>
+                            <button class="product-btn wishlist-btn" onclick="event.stopPropagation(); addToWishlist(${product.id})"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function copyQuote(text) {
+            navigator.clipboard.writeText(text);
+            showNotification('📋 Quote copied to clipboard!');
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            document.getElementById('notification-message').textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
